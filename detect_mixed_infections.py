@@ -326,11 +326,11 @@ else:
             ## ###################################################################################
             ##
             ## Filter the reads based on whether or not they have the same length as the most common read length,
-            ## number of gaps, and if the sequence starts with 'GAT' (the primer sequences first 3 positions).
+            ## number of gaps, and if the sequence starts with 'GAT' (the first 3 positions in the primer sequence).
             ##
             ## ###################################################################################
 
-            # If the no filtered_reads file exists, create the file and filtered the reads.
+            # If the no filtered_reads file exists, create the file and filter the reads.
             if not any(fname.startswith(file_name + '_filtered_reads') for fname in os.listdir(query_folder + "mixed_infection_files/")):
                 # Loop through all the totals files (mixed infections will have more than one, since these are based on genotype).
                 for i in range(len(totals_file_list)):
@@ -394,15 +394,15 @@ else:
                 # Get the highest frequency from the list and the index of that frequency.
                 highest_freq  = max(freq_list)
                 highest_index = freq_list.index(highest_freq)
-                # If the highest frequency is equal to or less than 0.85 (85%), this could indicate a mixed infection.
+                # If the highest frequency is less than 1 (100%), this could indicate a mixed infection.
                 if (highest_freq < 1):
                     # Create a copy of the freq_list and delete the highest frequency value.
                     freq_list2 = list(freq_list)
                     del freq_list2[-highest_index]
                     # Calculate the second highest frequency value in the copied freq list.
                     second_highest_freq  = max(freq_list2)
-                    # If the second highest frequency is equal to or larger than 0.15 (15%), this is considered a mixed infection.
-                    # These cut-off value (85% and 15%) can be altered by the user if they want the cut-off to be higher or lower.
+                    # If the second highest frequency is larger than 0 (0%), this is considered a mixed infection.
+                    # This cut-off can be altered by the user if they want the cut-off to be stricter for what counts as a mixed infection.
                     if (second_highest_freq > 0):
                         mixed_infection = True
                         print("This sample contains a mixed genotype infection!")
