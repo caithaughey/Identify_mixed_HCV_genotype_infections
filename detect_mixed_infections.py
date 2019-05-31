@@ -19,8 +19,7 @@ from collections import Counter
 ### Description: Checks the reads for HCV sample sequenced with PacBio (or possibly other long read technology)
 ###              to assess if the sample contains a mixed infection (an infection with multiple HCV genotypes).
 ###              Reads are then filtered based on length and number of gaps. The reads are aligned and a consensus
-###              sequence is created for the sample. This consensus sequence is in fasta format and can be used
-###              in the Geno2pheno database (https://hcv.geno2pheno.org) for RAV identification and genotyping.
+###              sequence is created for the sample. This consensus sequence is in fasta format.
 ###
 #####################################################################################################
 
