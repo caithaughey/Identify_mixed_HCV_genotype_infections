@@ -85,7 +85,7 @@ else:
                     print("Reads file successfully converted from fastq to fasta format!")
                     print("\n")
 
-            # Save the relative path of the query file + the fasta file name.
+            # Save the relative path of the fasta file.
             fasta_file_path = query_folder + file_name + ".fasta"
 
             try:
