@@ -16,7 +16,7 @@ from collections import Counter
 ### Usage: Run command:
 ###         python parse_blast_results.py 'fastq file containing the sequenced HCV reads' 'threshold value for consensus sequence'
 ###
-### Description: Checks the reads for patients HCV sample sequenced with PacBio (or possibly other long read technology)
+### Description: Checks the reads for HCV sample sequenced with PacBio (or possibly other long read technology)
 ###              to assess if the sample contains a mixed infection (an infection with multiple HCV genotypes).
 ###              Reads are then filtered based on length and number of gaps. The reads are aligned and a consensus
 ###              sequence is created for the sample. This consensus sequence is in fasta format and can be used
